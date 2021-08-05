@@ -6,7 +6,12 @@ function App() {
   const [text, setText] = useState("");
 
   useEffect(() => {
+    document.title = text;
     console.log("useEffect called");
+  }, [text]);
+
+  useEffect(() => {
+    setTimeout(() => setCount(0), 5000)
   });
 
   console.log("Component rendering");
